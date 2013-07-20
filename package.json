@@ -1,0 +1,23 @@
+{
+  "name": "rpub",
+  "version": "0.0.1",
+  "description": "Publisher core for RMag frameworks",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RobinQu/rpub.git"
+  },
+  "keywords": [
+    "ios",
+    "magazine",
+    "publisher"
+  ],
+  "author": "RobinQu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobinQu/rpub/issues"
+  }
+}
