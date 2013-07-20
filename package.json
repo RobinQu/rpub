@@ -22,5 +22,8 @@
   },
   "dependencies": {
     "uuid": "~1.4.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.10.2"
   }
 }

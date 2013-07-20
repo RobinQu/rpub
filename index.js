@@ -1,1 +1,4 @@
-module.exports = require("./lib/publisher");
+module.exports = {
+  Publisher: require("./lib/publisher"),
+  IssueParser: require("./lib/issue_parser")
+};
