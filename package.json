@@ -19,5 +19,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/RobinQu/rpub/issues"
+  },
+  "dependencies": {
+    "uuid": "~1.4.1"
   }
 }
