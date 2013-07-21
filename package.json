@@ -4,7 +4,7 @@
   "description": "Publisher core for RMag frameworks",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node /spec"
+    "test": "jasmine-node spec/"
   },
   "repository": {
     "type": "git",
