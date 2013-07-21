@@ -64,6 +64,18 @@ describe("FSStorage", function() {
     });
   });
   
-
+  it("should update an issue", function(done) {
+    var newdata = {meta:{sequence:5,name:uuid.v4()}, uuid: data.uuid};
+    p.updateIssue(newdata, require.main.filename, function(e, issue) {
+      expect(e).toBeFalsy();
+      expect(issue.meta.name).toEqual(newdata.meta.name);
+      expect(issue.meta.sequence).toEqual(newdata.meta.sequence);
+      done();
+    });
+  });
+  
+  it("should destroy an issue", function() {
+    
+  });
   
 });
