@@ -5,7 +5,8 @@ describe("FSStorage", function() {
   var rpub = require("../index"),
       path = require("path"),
       fs = require("fs"),
-      uuid = require("uuid");
+      uuid = require("uuid"),
+      child_prcess = require("child_process");
   
   var tmpdir = path.resolve(__dirname, "../tmp");
   if(!fs.existsSync(tmpdir)) {
@@ -84,5 +85,39 @@ describe("FSStorage", function() {
       });
     });
   });
+  
+  
+  it("should reload what lives on the fs", function(done) {
+    var len = 5, uuids, u;
+    
+    uuids = [];
+    while(len--) {
+      u = uuid.v4();
+      uuids.push(u);
+      p.addIssue({
+        uuid: u,
+        name: u
+      }, __filename);
+    }
+    
+    setTimeout(function() {
+      var p2 = new rpub.Publisher({
+        store: {dir:tmpdir}
+      });
+    
+      p2.reload(function(e, list) {
+        expect(e).toBeFalsy();
+        expect(Object.keys(list).length).toEqual(uuids.length);
+        Object.keys(p2.issues).forEach(function(u) {
+          expect(uuids.indexOf(u) > -1).toBeTruthy();
+        });
+        
+        child_prcess.exec("rm -rf " + tmpdir, done);
+      });
+    }, 500);
+    
+  });
+  
+  
   
 });
