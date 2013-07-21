@@ -21,7 +21,8 @@
     "url": "https://github.com/RobinQu/rpub/issues"
   },
   "dependencies": {
-    "uuid": "~1.4.1"
+    "uuid": "~1.4.1",
+    "mkdirp": "~0.3.5"
   },
   "devDependencies": {
     "jasmine-node": "~1.10.2"
