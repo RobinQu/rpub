@@ -74,8 +74,15 @@ describe("FSStorage", function() {
     });
   });
   
-  it("should destroy an issue", function() {
-    
+  it("should destroy an issue", function(done) {
+    p.revokeIssue(data.uuid, function(e) {
+      expect(e).toBeFalsy();
+      expect(p[data.uuid]).toBeFalsy();
+      p.info(data.uuid, function(e) {
+        expect(e).toBeTruthy();
+        done();
+      });
+    });
   });
   
 });
