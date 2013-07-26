@@ -4,7 +4,7 @@
   "description": "Publisher core for RMag frameworks",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node spec/"
+    "test": "mocha spec/"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,12 @@
     "uuid": "~1.4.1",
     "mkdirp": "~0.3.5",
     "oss-client": "https://github.com/RobinQu/oss-client/archive/master.tar.gz",
-    "pkgcloud": "~0.8.4"
+    "pkgcloud": "~0.8.4",
+    "utile": "~0.2.0",
+    "chai": "~1.7.2"
   },
-  "devDependencies": {
-    "jasmine-node": "~1.10.2"
+  "devDependecies": {
+    "mocha": "~1.12.0",
+    "chai": "~1.7.2"
   }
 }
